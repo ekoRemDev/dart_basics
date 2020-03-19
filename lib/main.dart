@@ -4,6 +4,16 @@ import 'models.dart';
 
 void main() => runApp(MyApp());
 
+enum DaysOfWeek{
+  Sunday,
+  Monday,
+  Tuesday,
+  Wednesday,
+  Thursday,
+  Friday,
+  Saturday
+}
+
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
@@ -47,6 +57,12 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
 
+
+  void runDaysOfWeek(){
+    print(DaysOfWeek.Tuesday);
+  }
+
+
   @override
   void initState() {
 
@@ -55,6 +71,8 @@ class _MyHomePageState extends State<MyHomePage> {
     runThisCode();
 
 
+    runDaysOfWeek();
+    
 
 
 
