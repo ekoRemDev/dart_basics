@@ -3,24 +3,23 @@ class Human{
   int year;
 
 
-
   Human(this.name, this.year);
 
 
-  String get humanName{
+  String get getName{
     return name;
   }
 
-  int get humanYear{
+  int get getYear{
     return year;
   }
 
 
-  set humanName(String givenName){
+  set setName(String givenName){
     name = givenName;
   }
 
-  set humanYear(int birthYear){
+  set setYear(int birthYear){
     year = birthYear;
   }
 
@@ -37,6 +36,10 @@ class Human{
   void run(){
     print(this.name + " is running ");
 }
+
+  void setNewName(String s) {
+    name = s;
+  }
 
 
 

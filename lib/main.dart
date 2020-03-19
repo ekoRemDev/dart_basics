@@ -28,16 +28,37 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
 
-  Human ilk = new Human("ekrem", 1980);
+  Human first = new Human("First Human", 1900);
 
   void runThisCode(){
     print("this is the code you run");
 
-    ilk.run();
+    first.run();
+    print(first.map);
+
+
+    first.setNewName("Second");
+
+    print("Get Name.....");
+    print(first.getName);
+
+
 
   }
 
 
+  @override
+  void initState() {
+
+    print(first.map);
+
+    runThisCode();
+
+
+
+
+
+  }
 
   @override
   Widget build(BuildContext context) {
