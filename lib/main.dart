@@ -1,18 +1,7 @@
 import 'package:flutter/material.dart';
-
-import 'models.dart';
+import 'package:flutter_mixins/Heroes.dart';
 
 void main() => runApp(MyApp());
-
-enum DaysOfWeek{
-  Sunday,
-  Monday,
-  Tuesday,
-  Wednesday,
-  Thursday,
-  Friday,
-  Saturday
-}
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -38,44 +27,33 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
 
-  Human first = new Human("First Human", 1900);
 
-  void runThisCode(){
-    print("this is the code you run");
+  // Mixin Example
+  Hulk heroHulk = new Hulk("Hulk..");
 
-    first.run();
-    print(first.map);
-
-
-    first.setNewName("Second");
-
-    print("Get Name.....");
-    print(first.getName);
+  void doSomeHulkThings(){
+    heroHulk.attack();
+    heroHulk.move();
+    heroHulk.swim();
+  }
 
 
-
+  IronMan heroIronMan = new IronMan("Iron Hero");
+  void doSomeIronManThings(){
+    heroIronMan.attack();
+    heroIronMan.move();
+    heroIronMan.fly();
   }
 
 
 
-  void runDaysOfWeek(){
-    print(DaysOfWeek.Tuesday);
-  }
 
 
   @override
   void initState() {
-
-    print(first.map);
-
-    runThisCode();
-
-
-    runDaysOfWeek();
-    
-
-
-
+    // mixin
+    doSomeHulkThings();
+    doSomeIronManThings();
   }
 
   @override
@@ -95,11 +73,6 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: runThisCode,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
